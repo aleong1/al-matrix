@@ -12,7 +12,19 @@ import math
 #print the matrix such that it looks like
 #the template in the top comment
 def print_matrix( matrix ):
-    pass
+    tmp = 0
+    printMatrix = ''
+    for l in matrix:
+        printMatrix += str(l[tmp]) + "  "
+        tmp += 1
+        if tmp >= len(matrix) - 1:
+            printMatrix += "\n"
+            tmp = 0
+    for l in matrix:
+        printMatrix += '1  '
+
+    print (printMatrix)
+
 
 #turn the paramter matrix into an identity matrix
 #you may assume matrix is square
