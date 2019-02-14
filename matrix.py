@@ -45,20 +45,15 @@ def ident( matrix ):
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
     #copy over m2
+    cols = []
     for i in m2:
         for a in m1:
-        #find way to multiply matrices
-        
+            
     
 
     
     tmp = new_matrix()
     
-
-    pass
-
-
-
 
 def new_matrix(rows = 4, cols = 4):
     m = []
