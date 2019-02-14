@@ -29,11 +29,32 @@ def print_matrix( matrix ):
 #turn the paramter matrix into an identity matrix
 #you may assume matrix is square
 def ident( matrix ):
-    pass
+    diagonal = 0
+    for i in matrix:
+        for ele in i:
+            if ele == diagonal:
+                i[ele] = 1
+            else:
+                i[ele] = 0
+        diagonal += 1
+        
+    print_matrix(matrix)
+    
 
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
+    #copy over m2
+    for i in m2:
+        for a in m1:
+        #find way to multiply matrices
+        
+    
+
+    
+    tmp = new_matrix()
+    
+
     pass
 
 
@@ -46,3 +67,4 @@ def new_matrix(rows = 4, cols = 4):
         for r in range( rows ):
             m[c].append( 0 )
     return m
+
