@@ -23,6 +23,7 @@ def print_matrix( matrix ):
     for l in matrix:
         printMatrix += '1  '
 
+    print ("print matrix")
     print (printMatrix)
 
 
@@ -37,7 +38,8 @@ def ident( matrix ):
             else:
                 i[ele] = 0
         diagonal += 1
-        
+
+    print ("identity")
     print_matrix(matrix)
     
 
@@ -45,15 +47,26 @@ def ident( matrix ):
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
     #copy over m2
-    cols = []
+    m = []
     for i in m2:
-        for a in m1:
-            
+        cols = []
+        for p in i:
+            for a in m1:
+                pl = 0
+                cols += p*a[pl]
+            pl += 1
+        cols += m
+
+    print ("matrix multiplication")
+    print_matrix(m)
+
+    #copy m to m2
+    
+    print("did m2 copy")
+    print_matrix(m2)
     
 
-    
-    tmp = new_matrix()
-    
+#make a new copy fxn?
 
 def new_matrix(rows = 4, cols = 4):
     m = []
