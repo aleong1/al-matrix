@@ -5,26 +5,24 @@ from matrix import *
 def draw_lines( matrix, screen, color ):
     col = 0
     while col < len(matrix) - 1:
-        draw_line(matrix[col][0],matrix[col][1], matrix[col+1][0], matrix[col+1][1], screen, color)
+        draw_line(int(matrix[col][0]),int(matrix[col][1]), int(matrix[col+1][0]), int(matrix[col+1][1]), screen, color)
         col += 1
-    
+
 
 def add_edge( matrix, x0, y0, z0, x1, y1, z1 ):
-    p1 = [x0, y0, z0, 1]
-    p2 = [x1, y1, z1, 1]
-    matrix.append(p1)
-    matrix.append(p2)
-    print("add edges")
-    print_matrix(matrix)
-    
+    add_point(matrix, x0,y0,z0)
+    add_point(matrix,x1,y1,z1)
+
 
 def add_point( matrix, x, y, z=0 ):
-    cor = [x,y,z]
+    if len(matrix) == 4 and matrix[0] == matrix[3]:
+        col = 0
+        l = len(matrix)
+        while col < l:
+            del matrix[0]
+            col += 1
+    cor = [float(x),float(y),float(z),1.00]
     matrix.append(cor)
-    print("add point")
-    print_matrix(matrix)
-
-
 
 
 def draw_line( x0, y0, x1, y1, screen, color ):
@@ -47,7 +45,7 @@ def draw_line( x0, y0, x1, y1, screen, color ):
     if ( abs(x1-x0) >= abs(y1 - y0) ):
 
         #octant 1
-        if A > 0:            
+        if A > 0:
             d = A + B/2
 
             while x < x1:

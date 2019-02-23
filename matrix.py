@@ -14,14 +14,11 @@ import math
 def print_matrix( matrix ):
     tmp = 0
     printMatrix = ''
-    for l in matrix:
-        printMatrix += str(l[tmp]) + "  "
+    while tmp < len(matrix[0]):
+        for l in matrix:  #cols
+            printMatrix += str(l[tmp]) + "  "
+        printMatrix +="\n"
         tmp += 1
-        if tmp >= len(matrix) - 1:
-            printMatrix += "\n"
-            tmp = 0
-    for l in matrix:
-        printMatrix += '1  '
 
     print ("print matrix")
     print (printMatrix)
@@ -31,17 +28,18 @@ def print_matrix( matrix ):
 #you may assume matrix is square
 def ident( matrix ):
     diagonal = 0
-    for i in matrix:
-        for ele in i:
-            if ele == diagonal:
-                i[ele] = 1
+    r = 0
+    while r < len(matrix):
+        c = 0
+        while c < len(matrix):
+            if c == diagonal:
+                matrix[r][c] = 1
             else:
-                i[ele] = 0
+                matrix[r][c] = 0
+            c+=1
         diagonal += 1
+        r+=1
 
-    print ("identity")
-    print_matrix(matrix)
-    
 
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
@@ -61,12 +59,10 @@ def matrix_mult( m1, m2 ):
     print_matrix(m)
 
     #copy m to m2
-    
+
     print("did m2 copy")
     print_matrix(m2)
-    
 
-#make a new copy fxn?
 
 def new_matrix(rows = 4, cols = 4):
     m = []
@@ -75,4 +71,3 @@ def new_matrix(rows = 4, cols = 4):
         for r in range( rows ):
             m[c].append( 0 )
     return m
-
