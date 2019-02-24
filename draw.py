@@ -23,8 +23,6 @@ def add_point( matrix, x, y, z=0 ):
             col += 1
     cor = [float(x),float(y),float(z),1.00]
     matrix.append(cor)
-    print("add point")
-    print_matrix(matrix)
 
 
 def draw_line( x0, y0, x1, y1, screen, color ):
