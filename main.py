@@ -11,16 +11,23 @@ draw_lines( matrix, screen, color )
 display(screen)
 
 #functions to test:
-print_matrix( matrix )
+add_edge( matrix, 1,2,3,4, 5, 6)
+print("matrix")
+print_matrix(matrix)
 
-add_point( matrix, 1, 1, 1 )
-add_edge( matrix, 2, 2, 2, 3, 3, 3 )
+m1 = new_matrix()
+ident( m1 )
+print("m1")
+print_matrix(m1)
 
-matrix = new_matrix()
-ident( matrix )
-#ident( matrix )
-#matrix_mult( m1, m2 )
+matrix_mult( m1, matrix )
 
-#draw_lines( matrix, screen, color )
-#add_edge( matrix, x0, y0, z0, x1, y1, z1 )
-#add_point( matrix, x, y, z=0 )
+m3 = new_matrix()
+add_edge(m3, 1,2,3,4,5,6)
+add_edge(m3, 7,8,9,10,11,12)
+print("m3")
+print_matrix(m3)
+
+matrix_mult(m3, matrix)
+print("changed matrix?")
+print_matrix(matrix)

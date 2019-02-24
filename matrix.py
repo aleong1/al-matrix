@@ -19,8 +19,6 @@ def print_matrix( matrix ):
             printMatrix += str(l[tmp]) + "  "
         printMatrix +="\n"
         tmp += 1
-
-    print ("print matrix")
     print (printMatrix)
 
 
@@ -33,9 +31,9 @@ def ident( matrix ):
         c = 0
         while c < len(matrix):
             if c == diagonal:
-                matrix[r][c] = 1
+                matrix[r][c] = 1.00
             else:
-                matrix[r][c] = 0
+                matrix[r][c] = 0.00
             c+=1
         diagonal += 1
         r+=1
@@ -44,24 +42,28 @@ def ident( matrix ):
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
-    #copy over m2
     m = []
     for i in m2:
-        cols = []
-        for p in i:
-            for a in m1:
-                pl = 0
-                cols += p*a[pl]
-            pl += 1
-        cols += m
+        col = []
+        c = 0
+        while c < len(m1[0]):
+            r = 0
+            sum = 0
+            while r < len(m1):
+                sum += i[r]*m1[r][c]
+                r += 1
+            col.append(sum)
+            c += 1
+        m.append(col)
 
-    print ("matrix multiplication")
-    print_matrix(m)
+    cols = 0   #empty m2
+    l = len(m2)
+    while cols < l:
+        del m2[0]
+        cols += 1
 
-    #copy m to m2
-
-    print("did m2 copy")
-    print_matrix(m2)
+    for a in m:
+        m2.append(a)
 
 
 def new_matrix(rows = 4, cols = 4):
