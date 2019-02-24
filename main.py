@@ -6,8 +6,6 @@ screen = new_screen()
 color = [ 204, 229, 255 ]
 matrix = new_matrix()
 
-
-
 #functions to test:
 add_edge( matrix, 1,2,3,4, 5, 6)
 add_point(matrix, 7,7,7)
